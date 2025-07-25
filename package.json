@@ -1,5 +1,5 @@
 {
-  "name": "mdx-m3-viewer",
+  "name": "mdx-m3-viewer-th",
   "version": "5.13.1",
   "description": "A browser WebGL model viewer. Mainly focused on models of the games Warcraft 3 and Starcraft 2.",
   "main": "dist/cjs/index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/flowtsohg/mdx-m3-viewer.git"
+    "url": "https://github.com/cipherxof/mdx-m3-viewer"
   },
   "author": "Chananya Freiman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/flowtsohg/mdx-m3-viewer/issues"
+    "url": "https://github.com/cipherxof/mdx-m3-viewer/issues"
   },
-  "homepage": "https://github.com/flowtsohg/mdx-m3-viewer#readme",
+  "homepage": "https://github.com/cipherxof/mdx-m3-viewer#readme",
   "dependencies": {
     "fengari": "^0.1.4",
     "file-saver": "^2.0.5",
