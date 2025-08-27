@@ -1,7 +1,6 @@
 import { extname } from "../../src/common/path";
 import { version } from "../../src/version";
 import Model from '../../src/parsers/mdlx/model';
-import { saveAs } from 'file-saver';
 
 console.log('Viewer version', version);
 
