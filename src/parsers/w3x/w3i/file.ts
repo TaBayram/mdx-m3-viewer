@@ -312,6 +312,10 @@ export default class War3MapW3i {
       size += 8;
     }
 
+    if (this.version > 32) {
+      size += 12;
+    }
+
     return size;
   }
 
