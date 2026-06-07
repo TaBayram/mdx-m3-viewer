@@ -120,7 +120,7 @@ export default class BinaryStream {
   /**
    * Read a binary string with the given number of bytes.
    */
-  readBinary(bytes: number): string {
+  readBinary(bytes: number, preserveNulls?: boolean): string {
     if (this.remaining < bytes) {
       throw new Error(`ByteStream: readBinary: premature end - want ${bytes} bytes but have ${this.remaining}`);
     }
@@ -131,7 +131,7 @@ export default class BinaryStream {
 
     for (let i = 0; i < bytes; i++) {
       const byte = uint8array[index + i];
-      chars += (byte === 0x0 ? '0' : String.fromCharCode(byte))
+      chars += (byte === 0x0 ? (preserveNulls ? '\u0000' : '0') : String.fromCharCode(byte))
     }
 
     this.index += bytes;

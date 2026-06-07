@@ -13,7 +13,7 @@ export default class Modification {
   u1 = 0;
 
   load(stream: BinaryStream, useOptionalInts: boolean): void {
-    this.id = stream.readBinary(4);
+    this.id = stream.readBinary(4, true);
     this.variableType = stream.readInt32();
 
     if (useOptionalInts) {
