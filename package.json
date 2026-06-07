@@ -8,7 +8,9 @@
     "build": "webpack --mode=production",
     "dev": "webpack -w --mode=development",
     "serve": "webpack serve",
-    "prepublishOnly": "node clean.js && tsc && webpack --mode=production --env=umd"
+    "prepublishOnly": "node clean.js && tsc && webpack --mode=production --env=umd && npm pack",
+    "pack": "npm pack",
+    "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1"
   },
   "repository": {
     "type": "git",

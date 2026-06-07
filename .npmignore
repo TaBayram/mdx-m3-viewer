@@ -8,3 +8,5 @@ src
 clients
 dist/clients
 clean.js
+deploy.ps1
+*.tgz
