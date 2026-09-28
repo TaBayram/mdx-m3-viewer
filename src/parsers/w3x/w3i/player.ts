@@ -14,8 +14,7 @@ export default class Player {
   allyLowPriorities = 0;
   allyHighPriorities = 0;
   unknown1 = new Uint8Array(8);
-  // Added in format version 39 (Warcraft III 3.0).
-  unknown2 = 0;
+  hudSkin = 0;
 
   load(stream: BinaryStream, version: number): void {
     this.id = stream.readInt32();
@@ -23,7 +22,7 @@ export default class Player {
     this.race = stream.readInt32();
 
     if (version >= 39) {
-      this.unknown2 = stream.readInt32();
+      this.hudSkin = stream.readInt32();
     }
 
     this.isFixedStartPosition = stream.readInt32();
@@ -42,7 +41,7 @@ export default class Player {
     stream.writeInt32(this.race);
 
     if (version >= 39) {
-      stream.writeInt32(this.unknown2);
+      stream.writeInt32(this.hudSkin);
     }
 
     stream.writeInt32(this.isFixedStartPosition);
