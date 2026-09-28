@@ -10,6 +10,7 @@ export class IniFile {
   properties: Map<string, string> = new Map();
   sections: Map<string, IniSection> = new Map();
   lineEnding: string = '\r\n'; // Default line ending
+  useSecondKey: boolean = false;
 
   load(buffer: string): void {
     // Detect line ending
@@ -39,6 +40,17 @@ export class IniFile {
             sections.set(name, section);
           }
         } else {
+          if (this.useSecondKey) {
+            match = line.match(/^(.+?)=(.*?),(.*?)$/);
+            if (match && match[2]) {
+              let value = match[3];
+              if (value[0] === '"') {
+                value = value.slice(1, -1);
+              }
+              section.set(match[2], value);
+              continue;
+            }
+          }
           match = line.match(/^(.+?)=(.*?)$/);
 
           if (match) {
